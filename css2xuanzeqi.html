@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		h1:before{
+			content:"&" ;
+			color:yellow;
+		}
+		h1:after{
+			content:#;
+		}
+		.bigbox{
+			background-color: yellow;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			float: left;
+		}
+		.clearFix:before,.clearFix:after{
+			content:"";
+			clear: both;
+			display: block;
+		} /*清浮动*/
+	</style>
+</head>
+<body>
+	<h1>这是一个标题</h1>
+	<div class="bigbox clearFix" >
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+</body>
+</html>

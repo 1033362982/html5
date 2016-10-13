@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.bigbox{
+			width: 200px;
+			height: 400px;
+			border:1px solid black;
+		}
+		.box02{
+			float: right;
+		}
+
+		.rbox{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+	
+			border:1px solid red;
+			text-align: center;
+			line-height: 100px;
+
+			box-sizing:border-box;
+		}
+		.lbox{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			border:1px solid red;
+			box-sizing:border-box;
+			transform-origin:right top;/*以左上为原点旋转*/
+			transition:transform .5s linear 1s;
+			z-index: 9;
+
+
+			
+		}
+		.move{
+			
+			transform:rotate(90deg);
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="bigbox">
+		
+		<div class="box02">
+			<div class="rbox">111<div class="lbox"></div></div>
+			<div class="rbox">11<div class="lbox"></div></div>
+			<div class="rbox">11<div class="lbox"></div></div>
+		</div>
+		
+	</div>
+	
+	<script src="script/jquery.js"></script>
+	<script>
+		$(".rbox").click(function(){
+			var ind=$(this).index()
+			$(".lbox").eq(ind).toggleClass("move")
+		})
+	</script>
+</body>
+</html>

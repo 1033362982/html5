@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*html,body{
+			height: 100%;
+		}*/
+		
+		.bbox{
+			width: 200px;
+			height: 100%;
+			
+			background-color: blue;
+			border:1px solid black;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform:translate(-200px);
+			transition:transform 1s linear ;
+		}
+		.hover{
+			transform:translate(0px);
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">open</button>
+	<div class="bbox">
+		<button id="btn2">close</button>
+		<ul>
+			<li><a href="">百度</a></li>
+			<li><a href="">谷歌</a></li>
+			<li><a href="">搜狐</a></li>
+			<li><a href="">优酷</a></li>
+			<li><a href="">火狐</a></li>
+		</ul>
+	</div>
+	<script src="script/jquery.js"></script>
+	<script>
+		$("#btn1").click(function(){
+			$(".bbox").addClass("hover")
+		})
+		$("#btn2").click(function(){
+			$(".bbox").removeClass("hover")
+		})
+	</script>
+</body>
+</html>

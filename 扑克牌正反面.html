@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.big-box{
+			width:300px;
+			height:300px;
+			padding:100px;
+			border:1px solid blue;
+			margin:100px auto;
+			perspective:500px;
+		}
+		.small-box{
+			border:1px solid red;
+			width:300px;
+			height:200px;
+			transition:transform 1s linear;
+			transform-style:preserve-3d;
+		}
+		.front{
+			width:300px;
+			height:200px;
+			background-color: red;
+			position: absolute;
+			z-index: 999;
+			backface-visibility:hidden;
+		}
+		.back{
+			width:300px;
+			height:200px;
+			background-color: green;
+			position: absolute;
+			transform:rotateY(180deg);
+		}
+		.small-box:hover{
+			transform:rotateY(180deg);
+		}
+
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<div class="small-box">
+			<div class="front">正面</div>
+			<div class="back">背面</div>
+		</div>
+	</div>
+</body>
+</html>

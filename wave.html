@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		@keyframes myanim1{
+			50%{
+				transform:translateX(-50px);
+			}
+		}
+		@keyframes myanim2{
+			50%{
+				transform:translateX(-20px);
+			}
+		}
+		@keyframes myanim3{
+			50%{
+				transform:translateX(-10px);
+			}
+		}
+		@keyframes ship{
+			50%{
+				transform:rotate(10deg);
+			}
+		}
+		@keyframes fish{
+			25%{
+				transform:rotate(-30deg);
+				top:400px;
+				left:200px;
+			}
+			50%{
+				transform:rotate(30deg);
+				top:650px;
+				left:500px;
+			}
+			75%{
+				transform:rotate(-30deg);
+				top:400px;
+				left:700px;
+			}
+			100%{
+				transform:rotate(30deg);
+				top:650px;
+				left:1000px;
+			}
+		}
+		html,body{
+			height: 100%;
+			overflow: hidden;
+		}
+		.sea{
+			
+			width: 100%;
+			height: 100%;
+			background-image: url("images/bg.png");
+		}
+		.boat{
+			position: absolute;
+			top:100px;
+			left:350px;
+			z-index: 5;
+			animation:ship 5s ease-in infinite;
+		}
+		.fish{
+			position: absolute;
+			top:650px;
+			left:20px;
+			z-index: 7;
+			animation:fish 5s ease-in infinite;
+		}
+		.ph1{
+			height: 100px;
+			width: 150%;
+			background-image:url("images/wave1.png");
+			position: absolute;
+			bottom: 0px;
+			z-index: 100;
+			left: 0;
+			animation:myanim1 2s linear infinite;
+		}
+		.ph2{
+			height: 100px;
+			width: 150%;
+			background-image:url("images/wave2.png");
+			position: absolute;
+			bottom: 50px;
+			z-index: 10;
+			left: 0;
+			animation:myanim2 2s linear infinite;
+		}
+			
+		.ph3{
+			height: 100px;
+			width: 150%;
+			background-image:url("images/wave3.png");
+			position: absolute;
+			bottom: 100px;
+			z-index: 0;
+			left: 0;
+			animation:myanim3 2s linear infinite;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="sea">
+		<img class="fish" src="images/yu.png" alt="">
+		<img class="boat" src="images/chuan.png" alt="">
+
+		<div class="ph1">
+			
+		</div>
+		<div class="ph2">
+			
+		</div>
+		<div class="ph3">
+		
+		</div>
+	</div>
+	
+	
+	
+	
+</body>
+</html>

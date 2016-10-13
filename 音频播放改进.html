@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<audio id="music" src="media/Boi.B (보이비) - 호랑나비 (凤蝶).mp3" loop></audio>
+	<button id="play">播放</button>
+	
+	<script>
+		var music=document.getElementById("music");
+		var playBtn=document.getElementById("play");
+		var pauseBtn=document.getElementById("pause");
+		playBtn.onclick=function(){
+			if(music.paused){
+				music.play()
+				this.innerHTML="暂停"
+			}else{
+				
+				music.pause()
+				this.innerHTML="播放"
+			}  
+		};
+		
+	</script>
+</body>
+</html>

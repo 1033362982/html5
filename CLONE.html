@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// var obj1={"name":"xiaoming"};
+		// var obj2=obj1;
+		// obj2.name="xiaohong";
+		// console.log(obj1);
+		// console.log(obj2);
+		/*赋值不可行，两个对象名字都变*/
+
+
+		// var obj1={"name":"xiaoming"};
+		// function cloneObj(option){
+		// 	var newOption={};
+		// 	for(var key in option){
+		// 		newOption[key]=option[key]
+		// 	}
+		// 	return newOption;
+		// }
+		// var obj2=cloneObj(obj1)
+		// obj2.name="xiaohong";
+		// console.log(obj1);
+		// console.log(obj2);
+		/*浅度克隆，只有原始类型适用*/
+
+
+		var obj1={
+			"name":"xiaoming",
+			"friends":["xiaomi","xiaobin"],
+			"date":{
+				"secret":"haha"
+			}
+		};
+		function cloneObj(option){
+			if(option instanceof Array){
+				var newOption=[]
+			}else if(option instanceof Object){
+				var newOption={}
+			}
+			for(var key in option){
+				if(typeof(option[key])=== "object"){
+					newOption[key]=cloneObj(option[key])
+				}else{
+					newOption[key]=option[key]
+				}
+			}
+			return newOption;
+		}
+		var obj2=cloneObj(obj1);
+		obj2.date["secret"]="xixi";
+		obj2.friends[0]="xiaohong";
+		console.log(obj1);
+		console.log(obj2);
+		/*深度克隆*/
+	</script>
+</body>
+</html>
